@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  server:
+    build:
+      context: .
+    command: [ "python", "server.py" ]
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  client:
+    build:
+      context: .
+    command: [ "python", "client.py" ]
+    networks:
+      - app-network
+    depends_on:
+      - server
+
+networks:
+  app-network:

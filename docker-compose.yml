@@ -1,8 +1,10 @@
 version: "3.8"
+
 services:
   server:
     build:
       context: .
+      dockerfile: Dockerfile.server
     command: [ "python", "server.py" ]
     ports:
       - "5000:5000"
@@ -12,6 +14,7 @@ services:
   client:
     build:
       context: .
+      dockerfile: Dockerfile.client
     command: [ "python", "client.py" ]
     networks:
       - app-network
@@ -20,3 +23,5 @@ services:
 
 networks:
   app-network:
+
+

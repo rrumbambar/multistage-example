@@ -9,7 +9,6 @@ This is a simple Python app with two containers: a **server** and a **client** t
 ## Build and Run
 - `docker compose build`
 - `docker compose up`
-- The server will be available at http://localhost:5000.
 - The client will automatically make a request to the server and display the response in the logs: `{'message': 'Hi Client!'}`
 
 ## Docker images
